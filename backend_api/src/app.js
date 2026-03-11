@@ -38,6 +38,11 @@ app.use('/docs', swaggerUi.serve, (req, res, next) => {
   swaggerUi.setup(dynamicSpec)(req, res, next);
 });
 
+// Serve raw OpenAPI JSON
+app.get('/openapi.json', (req, res) => {
+  res.status(200).json(swaggerSpec);
+});
+
 // Parse JSON request body
 app.use(express.json());
 
