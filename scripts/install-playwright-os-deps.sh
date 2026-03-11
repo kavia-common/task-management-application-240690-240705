@@ -21,7 +21,8 @@ PACKAGES=(
   libxdamage1
   libgbm1
   libxkbcommon0
-  libasound2
+  # Ubuntu 24.04+ provides libasound2 as a virtual package; install the real t64 package.
+  libasound2t64
 )
 
 # Update apt metadata (required in fresh containers) then install libs
